@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!Austin Duda>
+<!Web Programming>
+<!Lab:5(Creating tables using JavaScript)>
+<!Summer Semester 1, 2019 >
+<html> 
+
+<center><a href='https://photos.google.com/share/AF1QipM7XE_ohA-wizfukROUKfpoEatWRC1DKcQMa1vsmNWrUNzkBvrayWPH0OwrU010jw?key=RThwckJRTlhzbHlXQXhuakxwT25aazkxeThHaUpn&source=ctrlq.org'>
+	<img src='https://lh3.googleusercontent.com/hTFwg_GmRpj3CzIUJd52KNLM5Ecr9JQ6nOhNeUT-2ZlMEttcfuaI8tfq6U52I7_uEm83nvnmWR7fl3stKRpTkPpQaUAeLVW0lKnFxOm7Zpkul9dlV0LlOkr2er8lwvdv1K5HOcmGcg=w2400'width="150"height="140"alt="Austin Duda"title="Austin Duda" />
+</a></center>
+
+<center><h2>
+Austin Duda
+</h2></center>
+
+<center>
+<h2>
+aududa@iu.edu
+</h2>
+</center>
+
+
+
+
+<head>
+<script type="text/javascript">
+	function MultiplicationTable_1()
+	{ 
+		document.write("<table border='1'>");
+		for (var row=1; row <=10; row++)
+		{ 
+			document.write("<tr>");
+			for (var col=1; col <=10; col++)
+			{ 
+				document.write("<td bgcolor='#3BA3D0'>");
+				document.write( row*col );
+				document.write("</td>");
+			} 
+			document.write("</tr>");
+		} document.write("</table>");
+	} 
+	
+	
+	document.write("<H3> Multiplication Table: (Version 1)</H3>");
+MultiplicationTable_1();
+</script>
+
+<script type="text/javascript">
+	function MultiplicationTable_2(numRow, numCol)
+	{ 
+		HTML = ""
+		HTML = HTML + "<table border='1'>";
+		for (var row=1; row <=numRow; row++)
+		{ 
+			HTML = HTML + "<tr>";
+			for (var col=1; col <=numCol; col++)
+			{ 
+				HTML = HTML + "<td bgcolor='#3BA3D0'>";
+				
+				HTML = HTML +    row*col;
+				HTML = HTML + "</td>";
+			} 
+			HTML = HTML + "</tr>";
+		}
+		HTML = HTML + "</table>";
+		return(HTML);
+	} 
+	
+	
+	document.write("<H3> Multiplication Table (Version 2: Returning the HTML from the function)</H3>");
+	result = MultiplicationTable_2(5,5);
+	document.write(result);
+</script>
+
+
+
+
+<script type="text/javascript">
+function MultiplicationTable_3(numRow, numCol)
+{ 
+	HTML = ""
+	HTML = HTML + "<table border='1'>";
+	for (var row=1; row <=numRow; row++)
+	{ 
+		HTML = HTML + "<tr>";
+		for (var col=1; col <=numCol; col++)
+			{ 
+			if (row*col %2 == 1)
+				HTML = HTML + "<td bgcolor='#3BFF00'>";      // Odd numbers
+			 else 
+				HTML = HTML + "<td bgcolor='#3BA3D0'>";      // Even numbers
+			 
+			 HTML = HTML +    row*col;
+			 HTML = HTML + "</td>";
+			}
+ 			 HTML = HTML + "</tr>";
+	} 
+	HTML = HTML + "</table>";
+	return(HTML);
+} 
+
+document.write("<H3> Multiplication Table (Version 3: Displaying Odd numbers in GREEN)</H3>");
+result = MultiplicationTable_3(5,5);
+document.write(result);
+</script>
+
+
+
+
+<script type="text/javascript">
+function RandomTable(numRow, numCol)
+{ 
+	HTML = "" 
+	HTML = HTML + "<table border='1'>";
+	for (var row=1; row <=numRow; row++)
+	{ 
+		HTML = HTML + "<tr>";
+		for (var col=1; col <=numCol; col++)
+		{ 
+			randomNumber =    Math.floor( (Math.random() * 100));
+			HTML = HTML + "<td bgcolor='#3BA3D0'>";
+			HTML = HTML +    randomNumber;
+			HTML = HTML + "</td>";
+		} 
+		HTML = HTML + "</tr>";
+	} 
+	HTML = HTML + "</table>";
+	return(HTML);
+} 
+
+document.write("<H3> Random Table</H3>");
+result = RandomTable(5,5);
+document.write(result);
+</script>
+
+
+<script type="text/javascript">
+function FindPrimeInRandomTable(numRow, numCol)
+{ 
+	HTML = ""
+	HTML = HTML + "<table border='1'>";
+	for (var row=1; row <=numRow; row++)
+	{ 
+		HTML = HTML + "<tr>";
+		for (var col=1; col <=numCol; col++)
+		{ 
+			randomNumber =    Math.floor( (Math.random() * 100));
+			
+			if (isPrime(randomNumber))
+				HTML = HTML + "<td bgcolor='#3BFF00'>";// prime number
+			else 
+				HTML = HTML + "<td bgcolor='#3BA3D0'>";// non-prime number
+			
+			HTML = HTML +    randomNumber;
+			HTML = HTML + "</td>";
+		} 
+		HTML = HTML + "</tr>";
+	} HTML = HTML + "</table>";return(HTML);
+} 
+
+
+function isPrime (number)
+{ 
+		// A prime number (or a prime) is a natural number greater 
+		// than 1 that has no positive divisors other than 1 and itself. 
+		// http://en.wikipedia.org/wiki/Prime_number
+		if (number < 2) return false;var limit = Math.floor(Math.sqrt (number));
+		
+		for (var i = 2; i <= limit; i++)
+		{ 
+			if (number % i == 0)
+			{
+				return false;
+			} 
+		} 
+		return true;
+}
+
+document.write("<H3> Random Table (Display prime Numbers in random table in Green ) </H3>");
+
+result = FindPrimeInRandomTable(5,5);
+document.write(result);
+
+</script>
+
+
+
+
+
+
+<title>Creating Various Tables Using JavaScript<title/>
+<meta Charset="UTF-8">
+<meta name="keywords" content="HTML Tables Using Java Script, Web Programming, Java Script Math Object, Finding Prime Numbers">
+</head>
+
+
+
+
+<body>
+</body>
+</html>

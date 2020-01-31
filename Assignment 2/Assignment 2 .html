@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--Austin Duda
+Web Programming
+Lab:7(JavaScript, BOM and DOM manipulation, Event handling)
+Summer Semester 1, 2019 -->
+
+<head>
+
+<title>PictureView</title>
+<meta Charset="UTF-8">
+<meta name="keywords" content="JavaScript, Web Programming, DOM Manipulation, and Event Handling">
+<meta name="description" content="PictureView.com, Web Programming Assignment2 Summer semester 1,2019">
+<meta name="author" content="Austin Duda">
+
+
+</head>
+
+<script type="text/javascript">
+function showImages(imageName)
+{
+	var imageTag = 	"";
+	//alert(imageName);
+	
+	imageTag="<img src=' " + imageName + " ' width ='600' height='470' >";
+	
+	document.getElementById("bigimage").innerHTML = imageTag;
+}
+
+
+function previewFile()
+{
+	  var myFiles  =    document.getElementById("files");
+	  var imageTags = 	"";
+	  var myEventHandler="";
+	  for (var i=0; i < myFiles.files.length; i++) 
+	  {
+		//alert(myFiles.files[i].name);
+		myEventHandler = " onclick='showImages(\"" + myFiles.files[i].name + "\")'";
+		//alert(myEventHandler);
+		imageTags+= "<img src='" + myFiles.files[i].name + "' width='50' height='50' " + myEventHandler + ">";
+		//alert(imageTags);
+	  }
+	  document.getElementById("thumbnails").innerHTML = imageTags;
+}
+
+ </script>
+
+
+
+<body>
+
+<div id="container" style="width:1100px">
+
+	<div id="BlackBar";
+		style="background-color:#000000;
+		clear:both;
+		text-align:center;">
+		<b>.</b>
+		
+			<div id="header" 
+					style="background-color:#f9b300;
+					text-align:center;
+					height:100px;
+					width:1100px;
+					float:center;">
+				<h1>PictureView ®</h1>
+			</div>
+	</div>
+
+
+	<div id="BlackBar";
+			style="background-color:#000000;
+			clear:both;
+			text-align:center;">
+			<b>.</b>
+	</div>
+	
+	<div id="LeftSide";
+			style="background-color:#f9e000;
+			height:500px;
+			width:350px;
+			float:left;">
+			<br><br>
+			<input id="files" type="file"  name="files[]" multiple />
+			<button onclick="previewFile();"> Show Images </button>
+			<div id="thumbnails">
+			
+		
+		</div>
+	</div>
+	
+	
+	<div id="RightSide";
+			style="background-color:#f4dd97;
+			height:500px;
+			width:750px;
+			float:left;">
+		
+			<div id="bigimage";
+					style="background-color:#f4dd97;
+					text-align:center;
+					float:center;">
+			</div>
+	</div>
+
+	<div id="BlackBar";
+			style="background-color:#000000;
+			clear:both;
+			text-align:center;">
+			<b>.</b>
+	</div>
+	
+	<div id="footer";
+			style="background-color:#000000;
+			height:20px;
+			width:1100px;
+			clear:both;
+			text-align:center;">
+	<font color="white"><b>© Copyright 2018 by Web Design and Development</b></font>
+	</div>
+	
+</div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!Austin Duda>
+<!Web Programming>
+<!Lab:8(JavaScript, HTML 5 Canvas, DOM manipulation, Event handling)>
+<!Summer Semester 1, 2019 >
+
+<html>
+	
+<canvas id="myCanvas1" 
+		width="600" 
+		height="350" 
+		style="border:6px solid #FFd333; background:#FFFFFF">
+		Your browser does not support the HTML5 canvas tag. (Try Chrome, FireFox, or Safari.)
+</canvas>
+
+
+
+	<script type="text/javascript">
+	function displayRectangle(x, y, width, height, theColor, theCanvas, theShadow)
+{
+    var myCanvas = document.getElementById(theCanvas);
+    var ctx = myCanvas.getContext("2d");
+    ctx.fillStyle = theColor;
+    if (theShadow == true) {
+        ctx.shadowBlur = 10;
+        ctx.shadowOffsetX = 10;
+        ctx.shadowOffsetY = 10;
+        ctx.shadowColor = 'black';
+    }
+    else {
+        ctx.shadowBlur = 0;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
+    }
+    ctx.fillRect(x, y, width, height);
+}
+	</script>
+	
+<button onclick="displayRectangle(40,20,150,300, '#AAAA00', 'myCanvas1', true);" > 
+Display Rectangle 
+</button>
+<button onclick="displayRectangle(20,40,350,100, '#AACC00', 'myCanvas1', false);" >     
+Display Rectangle</button>
+
+<script>
+//------------------------------------------------------------------------------------------------
+function displayCircle(centerX,centerY, radius, theColor, theCanvas)
+	{ 
+		var myCanvas = document.getElementById(theCanvas);
+		var ctx = myCanvas.getContext("2d");
+		ctx.fillStyle = theColor;
+		ctx.beginPath();           // Start a new starting point for a path(drawing)
+		ctx.arc(centerX, centerY,radius, 0, 2*Math.PI);
+		ctx.stroke();//make the path visible (draw it) on the canvas
+		//ctx.fill();  // commented out to prevent fill out to prevent fill
+	}
+//------------------------------------------------------------------------------------------------
+function displayArc(centerX,centerY, radius, startAngle, endAngle, direction, theColor, theCanvas)
+{
+		var myCanvas = document.getElementById(theCanvas);
+		var ctx = myCanvas.getContext("2d");
+		ctx.fillStyle = theColor;
+		ctx.beginPath();
+		ctx.arc(centerX, centerY,radius,startAngle,endAngle);
+		ctx.stroke();
+		ctx.fill();
+}
+</script>
+
+<button onclick="displayCircle(300, 200, 50, '#AACC00', 'myCanvas1');" > Display Circle </button>
+
+<button onclick="displayArc(400, 250, 50, 0*Math.PI, 1*Math.PI, 'clockwise', '#AACC00', 'myCanvas1');" > Display 
+Arc 1</button>
+
+<button onclick="displayArc(400, 250, 50,1*Math.PI, 2*Math.PI, 'clockwise', '#AA3300', 'myCanvas1');" > Display 
+Arc 2 </button>
+
+
+
+
+
+
+<script type="text/javascript">
+function displayPieChart(theTitle, centerX, centerY, radius, myData, myLabel, theColors, theFill, theCanvas)
+{
+
+
+
+		var sumArray =0;
+		for(var i=0; i< myData.length; i++)
+		{ 
+		sumArray += myData[i];
+		}
+
+
+		var slices = Array();
+		for(var i=0; i< myData.length; i++)
+		{
+			slices[i] = myData[i]/ sumArray * 2 * Math.PI; 
+			//document.write(slices[i] + "Radians <br />");
+		}
+
+
+		var percentages = Array();
+		for(var i=0; i< myData.length; i++)
+		{ 
+			percentages[i] = myData[i]/ sumArray * 100;
+			//document.write(percentages[i] + "%, "); 
+		}
+		var direction    = "clockwise";
+
+
+		var myCanvas = document.getElementById(theCanvas);
+		var ctx = myCanvas.getContext("2d");//Uncaught TypeError: Cannot read property 'getContext' of null at displayPieChart (lab8.html:114) at HTMLButtonElement.onclick (lab8.html:188)
+		ctx.color = 'blue';
+		ctx.lineWidth = 1;
+
+
+
+		ctx.font ='20px Arial';
+
+
+// Calculate the Center of the canvas and position the title properly
+		var titleX = (myCanvas.width / 2) - (ctx.measureText(theTitle).width / 2);
+		ctx.fillText(theTitle, titleX, 30);
+
+
+
+//----------------------------------------------------------
+// Display the Pie Chart
+//----------------------------------------------------------
+		var startAngle = 0;
+		for (var i =0; i < slices.length; i++)
+		{ 
+				endAngle    = startAngle + slices[i];
+				ctx.fillStyle = theColors[i];
+				ctx.beginPath();
+				// Finally, draw the bounding lines that creates each pie in the pie chart
+				ctx.moveTo(centerX, centerY);// go to center
+				ctx.arc(centerX, centerY,radius,startAngle,endAngle, false);   // draw arc
+				ctx.lineTo(centerX, centerY);// back to center
+				ctx.stroke();
+				ctx.fill();
+				startAngle = endAngle;
+		} 
+		//----------------------------------------------------------
+		// Display the Legend
+		for (var i =0; i < slices.length; i++)
+		{ 
+				ctx.fillStyle = theColors[i];
+				var x = centerX + radius * 1.4 ;
+				var y = centerY - radius +    i * 40;
+				var width = 20;
+				var height = 20;
+				
+				ctx.fillRect(x,y, width, height);
+				
+				ctx.font ='20px Arial';
+				ctx.fillText(percentages[i].toFixed(2) +"% " +
+												myLabel[i] +
+												" (" + myData[i] + ")" ,
+												x+30, y+20);
+		} 
+		
+}
+</script>
+
+
+
+<script type="text/javascript">
+var myData = [400, 200, 100];                  // create an array to hold the data
+var myLabels = new Array('Risk','No Risk', 'Others');      // create an array for the labels
+var myColors = new Array('red', 'green', 'blue');                //  array  for  the  colors
+</script>
+
+
+<canvas id="myCanvas2" 
+		width="600"
+		height="350" 
+		style="border:6px solid #FFd333; background:#999999">
+Your browser does not support the HTML5 canvas tag. (Try Chrome, FireFox, or Safari.)
+</canvas>
+
+
+
+
+
+ <button onclick="displayPieChart('The Chart Title', 150, 200, 100, myData, myLabels, myColors, 'myCanvas2');" > 
+ Display Pie Chart </button>
+
+
+<head>
+  <title>HTML5, Canvas Graphics, JavaScript<title/>
+	<meta Charset="UTF-8">
+	<meta name="keywords" content="JavaScript, Web Programming, Canvas Graphics, and Event Handling">
+	
+</head>
+
+
+
+
+
+
+
+
+<body>
+</body>
+</html>

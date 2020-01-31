@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--Austin Duda
+Web Programming
+Lab:10((Intro to CSS))
+Summer Semester 1, 2019 -->
+<head>
+<script type="text/javascript">
+function loadImages()
+{ 
+	var myImages = new Array();
+	
+	var myFiles = document.getElementById("files");
+	
+	for (var i=0; i < myFiles.files.length; i++) // you can avoid this for loop if you wish.
+	{ 
+			myImages[i] = myFiles.files[i].name;
+	} 
+	
+	var theImages = document.getElementById("images");
+	theImages.innerHTML = ""; 					// Clearout the image area.
+	for (var i=0; i < myFiles.files.length; i++) 
+	{ 
+			randomTop = Math.floor(Math.random() * 500);
+			randomLeft = Math.floor(Math.random() * 800);
+			theImages.innerHTML = theImages.innerHTML +
+														"<img id='pic" + i +"' style='padding:1px; " +
+														" 			left : " +randomLeft +"px;    " +
+														" 			top    :  "  +randomTop  +"px;    "  +
+														" 			position:absolute; z-index: " + i + ";'" +
+														" 			src='" + myImages[i] + "'" +
+														" 			width = '90'    " +
+														" 			height= '80'    " +
+														"  />  ";
+	} 
+}
+
+</script>
+
+
+<style>
+	body
+{
+		background-color:yellowgreen;
+		Font-family:Arial,Helvetica,sans-serif;
+		color:white;
+}
+</style>
+
+<style>
+	.Title
+{
+		justify-content: center;
+		text-align:center;
+		color:red;
+		font-size:50px;
+		text-shadow:+4px +4px 10px red; font-size:400%;
+}
+</style>
+
+<style> 
+	#reverse 
+{	
+		color:white;
+		background-color:black;
+  
+}
+	#reverse:hover 
+{ 
+		color:Sienna;
+}
+</style>
+
+<style> 
+	div 
+{
+		border-style: double;
+		border-width: thick;
+		border-radius: 15px;
+		background: #73AD21;
+		padding: 20px; 
+		width: 900px;
+		margin-left:auto;
+		margin-right:auto;
+		padding-top: 10px;
+		padding-right: 10px;
+		padding-bottom: 10px;
+		padding-left: 10px;
+		height: 150px; 
+		color:black;
+		background-color:white;
+}
+
+</style>
+
+<style type= "text/css">
+	img
+{
+		opacity:0.5;
+		filter:alpha(opacity=50); /* For IE8 and earlier */
+		transition:all 2s;/* 2 second transition */
+		-moz-transition:all 2s; /* Firefox 4 */
+		-webkit-transition:all 2s; /* Safari and Chrome */
+		-o-transition:all 2s; /* Opera */
+}
+
+	img:hover
+{
+		opacity:1.0;
+		filter:alpha(opacity=100); /* For IE8 and earlier */
+		-moz-transform: translateY(40px) scale(6) rotate(-5deg);
+		-webkit-transform:translateY(40px) scale(6) rotate(-5deg);
+		-o-transform: translateY(40px) scale(6) rotate(-5deg);
+		transform:translateY(40px) scale(6) rotate(-5deg);
+}
+</style>
+</head>
+
+<body>
+<p style ="text-shadow: -4px -4px 10px red; font-size:50px;">
+<h1 class=Title> CSS Animation</h1>
+</p>
+
+<div id="reverse">
+	<input id="files"
+					type="file"   
+					name="files[]" 
+					accept="image/*"
+					onchange="loadImages();"
+					multiple
+					/> 
+</div>
+
+<div id="images" style="height:600px; position:relative;"> 
+Images will go here...
+</div>
+
+</body
+</html>

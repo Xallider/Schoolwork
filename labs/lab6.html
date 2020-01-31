@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!Austin Duda>
+<!Web Programming>
+<!Lab:6(JavaScript, input tag, event handling, DOM manipulation)>
+<!Summer Semester 1, 2019 >
+
+<script type="text/javascript">
+function showDirectory()
+{ 
+	var  myFiles  =    document.getElementById("files");
+	for (var i=0; i < myFiles.files.length; i++) 
+    { 
+		document.write("<b>File Name: </b>" + myFiles.files[i].name +" <br />");
+		document.write("<b>Type: </b>" + myFiles.files[i].type +" <br />");
+		document.write("<b>Size: </b>" + myFiles.files[i].size +" <br />");
+		document.write("<p>");
+	}
+} 
+</script>
+
+	<h1> Show the Directory and Select one or more files. </h1>
+	<input id="files" type="file"    name="files[]" multiple />
+	<br/>
+
+	<button onclick="showDirectory();"> Show files in the directory </button>
+	<br/>
+ 
+
+<head>
+<title>JavaScript Arrays, input tag, event handling<title/>
+<meta Charset="UTF-8">
+<meta name="keywords" content="JavaScript, Web Programming, DOM Manipulation, and Event Handling">
+</head>
+<body>
+
+</body>
+</html>
+

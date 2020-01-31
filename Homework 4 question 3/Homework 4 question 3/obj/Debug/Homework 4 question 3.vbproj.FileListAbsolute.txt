@@ -1,0 +1,20 @@
+C:\Users\austi\AppData\Local\Temporary Projects\Homework 4 question 3\bin\Debug\Homework 4 question 3.exe.config
+C:\Users\austi\AppData\Local\Temporary Projects\Homework 4 question 3\bin\Debug\Homework 4 question 3.exe
+C:\Users\austi\AppData\Local\Temporary Projects\Homework 4 question 3\bin\Debug\Homework 4 question 3.pdb
+C:\Users\austi\AppData\Local\Temporary Projects\Homework 4 question 3\bin\Debug\Homework 4 question 3.xml
+C:\Users\austi\AppData\Local\Temporary Projects\Homework 4 question 3\obj\Debug\Homework_4_question_3.Resources.resources
+C:\Users\austi\AppData\Local\Temporary Projects\Homework 4 question 3\obj\Debug\Homework 4 question 3.vbproj.GenerateResource.Cache
+C:\Users\austi\AppData\Local\Temporary Projects\Homework 4 question 3\obj\Debug\Homework 4 question 3.exe
+C:\Users\austi\AppData\Local\Temporary Projects\Homework 4 question 3\obj\Debug\Homework 4 question 3.xml
+C:\Users\austi\AppData\Local\Temporary Projects\Homework 4 question 3\obj\Debug\Homework 4 question 3.pdb
+C:\Users\austi\AppData\Local\Temporary Projects\Homework 4 question 3\obj\Debug\Homework_4_question_3.Shirts.resources
+C:\Users\austi\documents\visual studio 2015\Projects\Homework 4 question 3\Homework 4 question 3\bin\Debug\Homework 4 question 3.exe.config
+C:\Users\austi\documents\visual studio 2015\Projects\Homework 4 question 3\Homework 4 question 3\obj\Debug\Homework 4 question 3.exe
+C:\Users\austi\documents\visual studio 2015\Projects\Homework 4 question 3\Homework 4 question 3\obj\Debug\Homework 4 question 3.xml
+C:\Users\austi\documents\visual studio 2015\Projects\Homework 4 question 3\Homework 4 question 3\obj\Debug\Homework 4 question 3.pdb
+C:\Users\austi\documents\visual studio 2015\Projects\Homework 4 question 3\Homework 4 question 3\obj\Debug\Homework_4_question_3.Resources.resources
+C:\Users\austi\documents\visual studio 2015\Projects\Homework 4 question 3\Homework 4 question 3\obj\Debug\Homework_4_question_3.Shirts.resources
+C:\Users\austi\documents\visual studio 2015\Projects\Homework 4 question 3\Homework 4 question 3\obj\Debug\Homework 4 question 3.vbproj.GenerateResource.Cache
+C:\Users\austi\documents\visual studio 2015\Projects\Homework 4 question 3\Homework 4 question 3\bin\Debug\Homework 4 question 3.exe
+C:\Users\austi\documents\visual studio 2015\Projects\Homework 4 question 3\Homework 4 question 3\bin\Debug\Homework 4 question 3.pdb
+C:\Users\austi\documents\visual studio 2015\Projects\Homework 4 question 3\Homework 4 question 3\bin\Debug\Homework 4 question 3.xml

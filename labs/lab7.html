@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!Austin Duda>
+<!Web Programming>
+<!Lab:7(JavaScript, BOM and DOM manipulation, Event handling)>
+<!Summer Semester 1, 2019 >
+
+<html>
+
+<div id="container" style="width:900px">
+<!--          ------------------ Header ---------------------------        -->
+<div id="header" 
+				style="background-color:#FFA500;
+				text-align:center;
+				height:90px;
+				width:900px;">
+			<h1>Bachelor of Science in Informatics</h1>
+</div>	
+
+
+<!--          ------------------ Top Nav ---------------------------        -->
+
+<div id="topnav";
+				style="background-color:#AADD00;
+				height:60px;
+				width:900px;
+				float:left;
+				text-align:center">
+				
+				
+			<h3 id="visitor" onclick="visitor_information() " > Click here to see Visitor Information </h3>
+</div>
+	
+<script>
+
+function visitor_information()
+{ 
+	var myPage = window.open("", "_blank", "width=500, height=400");// Open a new window
+	// Move the window
+	myPage.moveTo(0,0);    // Check to see if it works for all browsers!
+	
+	myPage.document.write("<html> <body style='background-color:#AADD00'>");
+	myPage.document.write("Step 1-<b>Current URL:</b> " + window.location + "<br />");
+	myPage.document.write("Step 2-<b>Browser Window Width:</b> " +    window.outerWidth + "<br />");
+	myPage.document.write("Step 3-<b>Browser Window Height:</b> " + window.outerHeight + "<br />");
+	myPage.document.write("Step 4-<b>Screen  (monitor)  Width:</b>  "  +    screen.width    +  "<br  />");
+	myPage.document.write("Step 5-<b>Screen  (monitor)  Height:</b>  "  +    screen.height    +  "<br  />");
+	myPage.document.write("Step 6-<b>If the user approves, resize the window to full screen</b>");
+	myPage.document.write("</body> </html>");
+	// If the user agrees, resize the window.
+	var result = myPage.confirm("Press OK to resize the window to " + screen.width +" x " + screen.height);
+	if (result == true)    
+		myPage.resizeTo(screen.width,screen.height);	// Check to see if it works for all browsers!
+}
+
+</script>
+
+<script>
+//---------------------------------------------------------------------------------------------------------
+function fundamental_literacies_on()
+{ 
+		var HTML_Text = "<b>FUNDAMENTAL LITERACIES</b>" +
+							"<ol>" +
+							" 		<li> ENG-W 131 English Composition (3 cr.) A grade of C or better is required.</li>" +
+							" 		<li> Critical Thinking (3 cr.) e.g., PHIL- P 105, P 110, P 150, or P 250</li>" +
+							" 		<li> Oral Communication (3 cr.) SPCH-S 121</li> " +
+							" 		<li> Visual Literary (3 cr.) e.g., INFO-I310, FINA A109, JOUR J210</li>"    +
+							" 		<li> Quantitative Reasoning (3 cr.) Satisfied by required Mathematics courses</li>" +
+							" 		<li> COAS-Q 110 Information Literacy (1 cr.) Should be taken with ENG W131</li>" +
+							" 		<li> Computer Literacy (3 cr.) Satisfied by required Computer Science courses</li>" +
+							"</ol>";
+
+		var theContent =    document.getElementById("FL");
+		theContent.innerHTML = HTML_Text;} 
+//---------------------------------------------------------------------------------------------------------
+function fundamental_literacies_off()
+{ 
+		var HTML_Text = "<b>FUNDAMENTAL LITERACIES</b>";
+		
+		var theContent =    document.getElementById("FL");
+		theContent.innerHTML = HTML_Text;
+}
+</script>
+
+
+<script>
+//---------------------------------------------------------------------------------------------------------
+function common_core_on()
+{ 
+		var HTML_Text = "<b>COMMON CORE (12 Credits). At least one of the following must be at the 300 level.</b>" +
+							"<ol>" +"<li> The Natural World (3 cr.) e.g., N190 or N390</li>"+
+							"<li> Human Behavior & Social Institutions (3 cr.) e.g., B190 or B399</li>"+
+							"<li> Literary and Intellectual Traditions (3 cr.) e.g., T190 or T390</li>"+
+							"<li> Art, Aesthetics and Creativity (3 cr.) e.g., A190 or A399</li>" +
+							"</ol>";
+							
+		var theContent =    document.getElementById("CC");
+		theContent.innerHTML = HTML_Text;
+} 
+function common_core_off()
+{ 		
+		var HTML_Text = "<b>COMMON CORE</b>";
+		var theContent =    document.getElementById("CC");
+		theContent.innerHTML = HTML_Text;} 
+//---------------------------------------------------------------------------------------------------------
+function contemporary_social_values_on()
+{ 
+		var HTML_Text = "<b>CONTEMPORARY SOCIAL VALUES (8 Credits)</b>" +
+							"<ol>" +
+							"<li> Non-Western Cultures (3 cr.) e.g., ANTH E105, POLS Y109</li>"+
+							"<li> Diversity in U.S. Society (3 cr.) e.g., SOC S161, HIST H105 or H106</li>"+
+							"<li> Health and Wellness (2 cr.) e.g., HPER N220, NURS B109 plus HPER-E 100-level</li>" + 
+							"</ol>";
+							
+		var theContent =    document.getElementById("CSV");
+		theContent.innerHTML = HTML_Text;
+} 
+
+function contemporary_social_values_off()
+{ 
+
+		var HTML_Text = "<b>CONTEMPORARY SOCIAL VALUES</b>";
+		
+		var theContent =    document.getElementById("CSV");
+		theContent.innerHTML = HTML_Text;
+}
+//---------------------------------------------------------------------------------------------------------
+</script>
+
+
+<!--          ------------------ Content ---------------------------        -->
+<div id="content";
+					style="background-color:#EEEEEE;
+					height:100%;
+					width:900px;
+					float:left;">
+					
+					
+<img src="http://cs.iusb.edu/~hhakimza/CSCI-C490_ClientServer/Images/campus4.jpg" height="150" align="right"/>
+
+<p> <i>
+Information technology (IT) is rapidly changing the world, creating new challenges and opportunities every day. 
+Informatics equips students to study IT, consider its social impact, and find ways to use technology to solve 
+problems. The aim is to produce qualified information technology professionals who understand the ways people 
+work with and use information, and who can develop solutions that are effective and easy-to-use. Usually, 
+informatics is combined with another field of study or cognate. A number of cognates have been identified, such as 
+bioinformatics, social informatics, business, new media, and health care informatics.
+</i> </p>
+
+<p>
+The degree requires a total of 120 credit hours including the following:
+</p>
+
+<div id="FL"  
+	onmouseover="fundamental_literacies_on();"
+	onmouseout="fundamental_literacies_off();"	
+	style="background-color:#AADD00"> 
+	<b>FUNDAMENTAL LITERACIES</b>
+	
+	
+</div>
+<br />
+
+<div id="CC" 
+	onmouseover="common_core_on();"
+	onclick="common_core_off()"
+	style="background-color:#AADD00">  
+	<b>COMMON CORE</b>
+</div>
+<br />
+
+
+<div id="CSV"  
+	onmouseover="contemporary_social_values_on();"
+	ondblclick="contemporary_social_values_off();"
+	style="background-color:#AADD00"> 
+	<b>CONTEMPORARY SOCIAL VALUES</b>
+</div>
+
+
+<head>
+  <title>JavaScript Arrays, input tag, event handling<title/>
+	<meta Charset="UTF-8">
+	<meta name="keywords" content="JavaScript, Web Programming, DOM Manipulation, and Event Handling">
+</head>
+
+
+</html>
